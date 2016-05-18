@@ -1,1 +1,11 @@
-<h1>SCORES</h1>
+<div class="jumbotron text-center">
+  <h1>{{sc.getScores['team-1']}} vs {{sc.getScores['team-2']}}</h1>
+</div>
+
+<div class="panel panel-header">
+  <h3>
+    <div class="text-center">{{sc.getScores.score}}</div>
+  </h3>
+</div>
+
+<div class = "text-center container"><i>Latest:</i> &nbsp; {{sc.getScores['innings-requirement']}}</div>

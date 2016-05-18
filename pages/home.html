@@ -1,1 +1,16 @@
-<h1><a href="#/scores">HOME</a></h1>
+<div class="jumbotron">
+  <h1>Live Cricket Matches </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!-- <h3>Matches</h3> -->
+    <h4>{{hc.myDate | date: 'fullDate'}}</h4>
+  </div>
+</div>
+<br>
+<table class="table">
+  <tr ng-repeat="x in hc.getData.data">
+    <td><a href="#/scores/{{x.unique_id}}">{{x.title}}</a></td>
+  </tr>
+</table>
