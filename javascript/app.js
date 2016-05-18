@@ -1,28 +1,30 @@
 //Module
-var CricApp = angular.module('CricApp',['ngRoute']);
+var CricApp = angular.module('CricApp',['ngRoute','ngResource']);
 
 //Routes
 CricApp.config(function($routeProvider){
   $routeProvider
   .when('/',{
     templateUrl:'pages/home.html',
-    controller:'homeController'
-  });
+    controller:'homeController',
+    controllerAs: 'hc'
+  })
   .when('/scores',{
     templateUrl:'pages/scores.html',
-    controller:'scoresController'
-  });
+    controller:'scoresController',
+    controllerAs:'sc'
+  })
 });
 
+//Service
 
-//controller
-CricApp.controller('homeController',['$scope','$http', function($scope,$http){
-  $scope.getItems = function() {
-    $http({method : 'GET',url : 'http://cricapi.com/api/cricket'})
-    .success(function(data) {
-      $scope.input = data;
-      console.log($scope.input);
-    });
-  };
-  $scope.getItems();
+
+//Controller
+CricApp.controller('homeController',['$scope', '$http','$resource', function($scope, $http , $resource){
+
+
+}]);
+
+CricApp.controller('scoresController',['$scope', '$http','$resource', function($scope, $http , $resource){
+
 }]);
